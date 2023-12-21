@@ -9,15 +9,15 @@ jobs:
     deploy:
         runs-on: ubuntu-20.04
         steps:
-            - name: Checkout code
+            - name: checkout code
               uses: actions/checkout@v4
               with:
                 fetch-depth: 5
                 fetch-tags: true
 
-            - name: "git describe"
+            - name: git describe
               run: git describe --tags --abbrev=0
 
-            - name: "GitHub.ref_name"
+            - name: github.ref_name
               run: echo ${{ github.ref_name }}
             
