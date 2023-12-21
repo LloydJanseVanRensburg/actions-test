@@ -12,10 +12,10 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v4
               with:
-                fetch-depth: 0
+                fetch-depth: 5
 
             - name: "git Describe Command"
-              run: git log --oneline
+              run: git describe --tags --abbrev=0
 
             - name: "GitHub.ref_name"
               run: echo ${{ github.ref_name }}
