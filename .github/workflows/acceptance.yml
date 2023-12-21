@@ -12,8 +12,8 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v4
 
-            - name: git log
-              run: git log
+            - name: git describe
+              run: git describe --tags --abbrev=0
 
             - name: github.ref_name
               run: echo ${{ github.ref_name }}
