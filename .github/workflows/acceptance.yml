@@ -9,6 +9,9 @@ jobs:
     deploy:
         runs-on: ubuntu-20.04
         steps:
+            - name: "git Describe Command"
+              run: git describe --tags
+
             - name: "Log github"
               run: echo ${{ github.ref_name }}
             
