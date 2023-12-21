@@ -9,8 +9,10 @@ jobs:
     deploy:
         runs-on: ubuntu-20.04
         steps:
-            - name: "Log github"
-              run: |
-                TAG=$(git describe --abbrev=0)
-                echo ${TAG}
+            - name: Checkout code
+              uses: actions/checkout@v4
+            - name: "git Describe Command"
+              run: echo $(git describe --abbrev=0)
+            - name: "GitHub.ref_name"
+              run: echo ${{ github.ref_name }}
             
