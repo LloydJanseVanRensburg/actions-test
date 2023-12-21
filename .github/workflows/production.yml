@@ -11,8 +11,10 @@ jobs:
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
+
             - name: "git Describe Command"
-              run: echo $(git describe --tags --abbrev=0 HEAD)
+              run: git describe --exact-match --tags $(git log -n 1 --pretty='%h')
+              
             - name: "GitHub.ref_name"
               run: echo ${{ github.ref_name }}
             
