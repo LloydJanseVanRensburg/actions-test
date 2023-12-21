@@ -13,12 +13,7 @@ jobs:
               uses: actions/checkout@v4
               with:
                 fetch-depth: 5
-
-            - name: "git fetch"
-              run: git fetch --prune --unshallow --tags
-
-            - name: "git log"
-              run: git log
+                fetch-tags: true
 
             - name: "git describe"
               run: git describe --tags --abbrev=0
