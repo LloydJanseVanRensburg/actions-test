@@ -14,7 +14,10 @@ jobs:
               with:
                 fetch-depth: 5
 
-            - name: "git Describe Command"
+            - name: "git log"
+              run: git log
+
+            - name: "git describe"
               run: git describe --tags --abbrev=0
 
             - name: "GitHub.ref_name"
