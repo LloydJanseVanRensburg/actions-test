@@ -1,0 +1,14 @@
+name: Acceptance
+
+on: 
+    push: 
+        tags:
+            - v*
+
+jobs:
+    deploy:
+        runs-on: ubuntu-20.04
+        steps:
+            - name: "Log github"
+              run: echo ${{ github.ref_name }}
+            
